@@ -1,0 +1,30 @@
+.left {
+    grid-area: left;
+/*    border-style: solid;*/
+}
+.key {
+    grid-area: key;
+    border-style: solid;
+
+    font-size: 30vh;
+    text-align: center;
+}
+.kana {
+    grid-area: kana;
+    border-style: solid;
+
+    font-size: 30vh;
+    text-align: center;
+}
+.right {
+    grid-area: right;
+/*    border-style: solid; */
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3.6fr 1fr;    
+    grid-template-rows: 1fr 1fr;    
+    grid-template-areas:
+        "left key  right"
+        "left kana right" ;
+}
