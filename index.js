@@ -238,19 +238,34 @@ function keyToKana (keyBuff) {
     if(typeof kana === "undefined" && keyBuff.length >= 2) {
         let c1 = keyBuff [keyBuff.length-2];
         let c2 = keyBuff [keyBuff.length-1];
-        if (c1 == 'l') {
-            if (c2 == 'a') kana = 'ぁ';
-            if (c2 == 'i') kana = 'ぃ';
-            if (c2 == 'u') kana = 'ぅ';
-            if (c2 == 'e') kana = 'ぇ';
-            if (c2 == 'o') kana = 'ぉ';
+
+        if (c1 == 'b') {
+            if (c2 == 'a') kana = 'ば';
+            if (c2 == 'i') kana = 'び';
+            if (c2 == 'u') kana = 'ぶ';
+            if (c2 == 'e') kana = 'べ';
+            if (c2 == 'o') kana = 'ぼ';
         }
-        if (c1 == 'k') {
+        if (c1 == 'c') {
             if (c2 == 'a') kana = 'か';
-            if (c2 == 'i') kana = 'き';
+            if (c2 == 'i') kana = 'し';
             if (c2 == 'u') kana = 'く';
-            if (c2 == 'e') kana = 'け';
+            if (c2 == 'e') kana = 'せ';
             if (c2 == 'o') kana = 'こ';
+        }
+        if (c1 == 'd') {
+            if (c2 == 'a') kana = 'だ';
+            if (c2 == 'i') kana = 'ぢ';
+            if (c2 == 'u') kana = 'づ';
+            if (c2 == 'e') kana = 'で';
+            if (c2 == 'o') kana = 'ど';
+        }
+        if (c1 == 'f') {
+            if (c2 == 'a') kana = 'ふぁ';
+            if (c2 == 'i') kana = 'ふぃ';
+            if (c2 == 'u') kana = 'ふ';
+            if (c2 == 'e') kana = 'ふぇ';
+            if (c2 == 'o') kana = 'ふぉ';
         }
         if (c1 == 'g') {
             if (c2 == 'a') kana = 'が';
@@ -259,33 +274,40 @@ function keyToKana (keyBuff) {
             if (c2 == 'e') kana = 'げ';
             if (c2 == 'o') kana = 'ご';
         }
-        if (c1 == 's') {
-            if (c2 == 'a') kana = 'さ';
-            if (c2 == 'i') kana = 'し';
-            if (c2 == 'u') kana = 'す';
-            if (c2 == 'e') kana = 'せ';
-            if (c2 == 'o') kana = 'そ';
+        if (c1 == 'h') {
+            if (c2 == 'a') kana = 'は';
+            if (c2 == 'i') kana = 'ひ';
+            if (c2 == 'u') kana = 'ふ';
+            if (c2 == 'e') kana = 'へ';
+            if (c2 == 'o') kana = 'ほ';
         }
-        if (c1 == 'z') {
-            if (c2 == 'a') kana = 'ざ';
+        if (c1 == 'j') {
+            if (c2 == 'a') kana = 'じゃ';
             if (c2 == 'i') kana = 'じ';
-            if (c2 == 'u') kana = 'ず';
-            if (c2 == 'e') kana = 'ぜ';
-            if (c2 == 'o') kana = 'ぞ';
+            if (c2 == 'u') kana = 'じゅ';
+            if (c2 == 'e') kana = 'じぇ';
+            if (c2 == 'o') kana = 'じょ';
         }
-        if (c1 == 't') {
-            if (c2 == 'a') kana = 'た';
-            if (c2 == 'i') kana = 'ち';
-            if (c2 == 'u') kana = 'つ';
-            if (c2 == 'e') kana = 'て';
-            if (c2 == 'o') kana = 'と';
+        if (c1 == 'k') {
+            if (c2 == 'a') kana = 'か';
+            if (c2 == 'i') kana = 'き';
+            if (c2 == 'u') kana = 'く';
+            if (c2 == 'e') kana = 'け';
+            if (c2 == 'o') kana = 'こ';
         }
-        if (c1 == 'd') {
-            if (c2 == 'a') kana = 'だ';
-            if (c2 == 'i') kana = 'ぢ';
-            if (c2 == 'u') kana = 'づ';
-            if (c2 == 'e') kana = 'で';
-            if (c2 == 'o') kana = 'ど';
+        if (c1 == 'l') {
+            if (c2 == 'a') kana = 'ぁ';
+            if (c2 == 'i') kana = 'ぃ';
+            if (c2 == 'u') kana = 'ぅ';
+            if (c2 == 'e') kana = 'ぇ';
+            if (c2 == 'o') kana = 'ぉ';
+        }
+        if (c1 == 'm') {
+            if (c2 == 'a') kana = 'ま';
+            if (c2 == 'i') kana = 'み';
+            if (c2 == 'u') kana = 'む';
+            if (c2 == 'e') kana = 'め';
+            if (c2 == 'o') kana = 'も';
         }
         if (c1 == 'n') {
             if (c2 == 'a') kana = 'な';
@@ -295,20 +317,6 @@ function keyToKana (keyBuff) {
             if (c2 == 'o') kana = 'の';
             if (c2 == 'n') kana = 'ん';
         }
-        if (c1 == 'h') {
-            if (c2 == 'a') kana = 'は';
-            if (c2 == 'i') kana = 'ひ';
-            if (c2 == 'u') kana = 'ふ';
-            if (c2 == 'e') kana = 'へ';
-            if (c2 == 'o') kana = 'ほ';
-        }
-        if (c1 == 'b') {
-            if (c2 == 'a') kana = 'ば';
-            if (c2 == 'i') kana = 'び';
-            if (c2 == 'u') kana = 'ぶ';
-            if (c2 == 'e') kana = 'べ';
-            if (c2 == 'o') kana = 'ぼ';
-        }
         if (c1 == 'p') {
             if (c2 == 'a') kana = 'ぱ';
             if (c2 == 'i') kana = 'ぴ';
@@ -316,17 +324,12 @@ function keyToKana (keyBuff) {
             if (c2 == 'e') kana = 'ぺ';
             if (c2 == 'o') kana = 'ぽ';
         }
-        if (c1 == 'm') {
-            if (c2 == 'a') kana = 'ま';
-            if (c2 == 'i') kana = 'み';
-            if (c2 == 'u') kana = 'む';
-            if (c2 == 'e') kana = 'め';
-            if (c2 == 'o') kana = 'も';
-        }
-        if (c1 == 'y') {
-            if (c2 == 'a') kana = 'や';
-            if (c2 == 'u') kana = 'ゆ';
-            if (c2 == 'o') kana = 'よ';
+        if (c1 == 'q') {
+            if (c2 == 'a') kana = 'くぁ';
+            if (c2 == 'i') kana = 'くぃ';
+            if (c2 == 'u') kana = 'く';
+            if (c2 == 'e') kana = 'くぇ';
+            if (c2 == 'o') kana = 'くぉ';
         }
         if (c1 == 'r') {
             if (c2 == 'a') kana = 'ら';
@@ -334,6 +337,27 @@ function keyToKana (keyBuff) {
             if (c2 == 'u') kana = 'る';
             if (c2 == 'e') kana = 'れ';
             if (c2 == 'o') kana = 'ろ';
+        }
+        if (c1 == 's') {
+            if (c2 == 'a') kana = 'さ';
+            if (c2 == 'i') kana = 'し';
+            if (c2 == 'u') kana = 'す';
+            if (c2 == 'e') kana = 'せ';
+            if (c2 == 'o') kana = 'そ';
+        }
+        if (c1 == 't') {
+            if (c2 == 'a') kana = 'た';
+            if (c2 == 'i') kana = 'ち';
+            if (c2 == 'u') kana = 'つ';
+            if (c2 == 'e') kana = 'て';
+            if (c2 == 'o') kana = 'と';
+        }
+        if (c1 == 'v') {
+            if (c2 == 'a') kana = 'ヴァ';
+            if (c2 == 'i') kana = 'ヴィ';
+            if (c2 == 'u') kana = 'ヴ';
+            if (c2 == 'e') kana = 'ヴェ';
+            if (c2 == 'o') kana = 'ヴォ';
         }
         if (c1 == 'w') {
             if (c2 == 'a') kana = 'わ';
@@ -344,26 +368,26 @@ function keyToKana (keyBuff) {
             if (c2 == 'e') kana = 'うぇ';
             if (c2 == 'o') kana = 'を';
         }
-        if (c1 == 'j') {
-            if (c2 == 'a') kana = 'じゃ';
+        if (c1 == 'x') {
+            if (c2 == 'a') kana = 'ぁ';
+            if (c2 == 'i') kana = 'ぃ';
+            if (c2 == 'u') kana = 'ぅ';
+            if (c2 == 'e') kana = 'ぇ';
+            if (c2 == 'o') kana = 'ぉ';
+        }
+        if (c1 == 'y') {
+            if (c2 == 'a') kana = 'や';
+            if (c2 == 'i') kana = 'い';
+            if (c2 == 'u') kana = 'ゆ';
+            if (c2 == 'e') kana = 'いぇ';
+            if (c2 == 'o') kana = 'よ';
+        }
+        if (c1 == 'z') {
+            if (c2 == 'a') kana = 'ざ';
             if (c2 == 'i') kana = 'じ';
-            if (c2 == 'u') kana = 'じゅ';
-            if (c2 == 'e') kana = 'じぇ';
-            if (c2 == 'o') kana = 'じょ';
-        }
-        if (c1 == 'f') {
-            if (c2 == 'a') kana = 'ふぁ';
-            if (c2 == 'i') kana = 'ふぃ';
-            if (c2 == 'u') kana = 'ふ';
-            if (c2 == 'e') kana = 'ふぇ';
-            if (c2 == 'o') kana = 'ふぉ';
-        }
-        if (c1 == 'v') {
-            if (c2 == 'a') kana = 'ヴァ';
-            if (c2 == 'i') kana = 'ヴィ';
-            if (c2 == 'u') kana = 'ヴ';
-            if (c2 == 'e') kana = 'ヴェ';
-            if (c2 == 'o') kana = 'ヴォ';
+            if (c2 == 'u') kana = 'ず';
+            if (c2 == 'e') kana = 'ぜ';
+            if (c2 == 'o') kana = 'ぞ';
         }
     }
     if(typeof kana === "undefined" && keyBuff.length >= 1) {
