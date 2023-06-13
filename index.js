@@ -16,7 +16,6 @@ window.addEventListener("load",function(e){
             setCurrentKana(kana);
             keyBuff = [];
         }
-        console.log(keyBuff);
     }
 
     function setCurrentKey(key) {
@@ -45,15 +44,35 @@ window.addEventListener("load",function(e){
 function keyToKana (keyBuff) {
 
     let kana;
-    if(keyBuff.length >= 3) {
+    if(keyBuff.length >= 4) {
+        let c1 = keyBuff [keyBuff.length-4];
+        let c2 = keyBuff [keyBuff.length-3];
+        let c3 = keyBuff [keyBuff.length-2];
+        let c4 = keyBuff [keyBuff.length-1];
+        if (c1 == c2) {
+            let k = kana3(c2,c3,c4);
+            if(typeof k !== "undefined"){
+                if (c2 == 'v') {
+                    kana = "ッ" + k;
+                } else {
+                    kana = "っ" + k;
+                }
+            }
+        }
+    }
+    if(typeof kana === "undefined" && keyBuff.length >= 3) {
         let c1 = keyBuff [keyBuff.length-3];
         let c2 = keyBuff [keyBuff.length-2];
         let c3 = keyBuff [keyBuff.length-1];
         kana = kana3(c1,c2,c3);
         if (c1 == c2) {
-            kana = "っ" + kana2(c2,c3);
-            if (c2 == 'v') {
-                kana = "ッ" + kana2(c2,c3);
+            let k = kana2(c2,c3);
+            if(typeof k !== "undefined"){
+                if (c2 == 'v') {
+                    kana = "ッ" + k;
+                } else {
+                    kana = "っ" + k;
+                }
             }
         }
     } 
@@ -71,15 +90,19 @@ function keyToKana (keyBuff) {
 
     function kana3(c1,c2,c3) {
         let kana;
-        if (c1 == 't' && c2 == 's' && c3 == 'u') {
-            kana = 'つ';
-        }
         if(c2 == 'h') {
             if (c1 == 'c') kana = csnToKana(c3,'ちゃ','ち','ちゅ','ちぇ','ちょ');
             if (c1 == 'd') kana = csnToKana(c3,'でゃ','でぃ','でゅ','でぇ','でょ');
             if (c1 == 's') kana = csnToKana(c3,'しゃ','し','しゅ','しぇ','しょ');
             if (c1 == 't') kana = csnToKana(c3,'てゃ','てぃ','てゅ','てぇ','てょ');
             if (c1 == 'w') kana = csnToKana(c3,'うぁ','うぃ','う','うぇ','うぉ');
+        }
+        if (c2 == 's') {
+            if (c1 == 't' && c3 == 'u') kana = 'つ';
+        }
+        if (c2 == 'w') {
+            if (c1 == 'k' && c3 == 'a') kana = 'くぁ';
+            if (c1 == 'g') kana = csnToKana(c3,'ぐぁ','ぐぃ','ぐぅ','ぐぇ','ぐぉ');
         }
         if (c2 == 'y') {
             if (c1 == 'b') kana = csnToKana(c3,'びゃ','びぃ','びゅ','びぇ','びょ');
