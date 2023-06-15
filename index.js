@@ -125,6 +125,7 @@ function keyToKana (keyBuff) {
             if (c1 == 'm') kana = csnToKana(c3,'みゃ','みぃ','みゅ','みぇ','みょ');
             if (c1 == 'n') kana = csnToKana(c3,'にゃ','にぃ','にゅ','にぇ','にょ');
             if (c1 == 'p') kana = csnToKana(c3,'ぴゃ','ぴぃ','ぴゅ','ぴぇ','ぴょ');
+            if (c1 == 'q') kana = csnToKana(c3,'くゃ','くぃ','くゅ','くぇ','くょ');
             if (c1 == 'r') kana = csnToKana(c3,'りゃ','りぃ','りゅ','りぇ','りょ');
             if (c1 == 's') kana = csnToKana(c3,'しゃ','しぃ','しゅ','しぇ','しょ');
             if (c1 == 't') kana = csnToKana(c3,'ちゃ','ちぃ','ちゅ','ちぇ','ちょ');
