@@ -3,6 +3,14 @@ window.addEventListener("load",function(e){
     let keyBuff = [];
     let currentKeyTimeout;
     let currentKanaTimeout;
+    
+    let elemShowKana = document.getElementsByName("showKana")[0];
+    document.getElementById("currentKana").style.visibility =
+        elemShowKana.checked ? "visible" : "hidden";
+    elemShowKana.addEventListener("change",function(event){
+        document.getElementById("currentKana").style.visibility
+            = event.target.checked ? "visible" : "hidden";
+    });
 
     document.addEventListener("keypress",function(event){
         setCurrentKey(event.key);

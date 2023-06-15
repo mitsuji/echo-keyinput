@@ -4,14 +4,14 @@
 }
 .key {
     grid-area: key;
-    border-style: solid;
+/*    border-style: solid; */
 
     font-size: 30vh;
     text-align: center;
 }
 .kana {
     grid-area: kana;
-    border-style: solid;
+/*    border-style: solid; */
 
     font-size: 30vh;
     text-align: center;
