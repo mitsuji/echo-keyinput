@@ -13,12 +13,20 @@ window.addEventListener("load",function(e){
     });
 
     document.addEventListener("keypress",function(event){
-        setCurrentKey(event.key);
-        visitKeyBuff(event);
+        let key = event.key;
+        if (key.length == 1) {
+            setCurrentKey(key);
+            let kcp = key.codePointAt(0);
+            if ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0)) {
+                visitKeyBuff(key);
+            } else {
+                keyBuff = [];
+            }
+        }
     });
 
-    function visitKeyBuff(event) {
-        keyBuff.push(event.key);
+    function visitKeyBuff(key) {
+        keyBuff.push(key);
         let kana = keyToKana(keyBuff);
         if (typeof kana !== "undefined") {
             setCurrentKana(kana);
