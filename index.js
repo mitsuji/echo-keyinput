@@ -1,5 +1,16 @@
 
 window.addEventListener("load",function(e){
+
+    let elemAbc = document.querySelectorAll(".abc");
+    elemAbc.forEach(function (elem) {
+        elem.addEventListener('click',function (event){
+            let abc = event.target.innerText.toUpperCase();
+            let audio = new Audio("audio/" + abc + ".mp3");
+            audio.play();
+        });
+    });
+
+
     let keyBuff = [];
     let currentKeyTimeout;
     let currentKanaTimeout;
