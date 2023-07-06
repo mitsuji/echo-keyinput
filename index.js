@@ -30,6 +30,9 @@ window.addEventListener("load",function(e){
             let kcp = key.codePointAt(0);
             if ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0)) {
                 visitKeyBuff(key);
+                let abc = key.toUpperCase();
+                let audio = new Audio("audio/" + abc + ".mp3");
+                audio.play();
             } else {
                 keyBuff = [];
             }
