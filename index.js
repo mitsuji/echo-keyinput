@@ -1,20 +1,12 @@
 
 window.addEventListener("load",function(e){
 
-    let elemAbc = document.querySelectorAll(".abc");
-    elemAbc.forEach(function (elem) {
-        elem.addEventListener('click',function (event){
-            let abc = event.target.innerText.toUpperCase();
-            let audio = new Audio("audio/" + abc + ".mp3");
-            audio.play();
-        });
+    let elemPlaySound = document.getElementsByName("playSound")[0];
+    let playSound = elemPlaySound.checked;
+    elemPlaySound.addEventListener("change",function(event){
+        playSound = elemPlaySound.checked;
     });
 
-
-    let keyBuff = [];
-    let currentKeyTimeout;
-    let currentKanaTimeout;
-    
     let elemShowKana = document.getElementsByName("showKana")[0];
     document.getElementById("currentKana").style.visibility =
         elemShowKana.checked ? "visible" : "hidden";
@@ -23,11 +15,39 @@ window.addEventListener("load",function(e){
             = event.target.checked ? "visible" : "hidden";
     });
 
+    let elemAbc = document.querySelectorAll(".abc");
+    let audioAbc = {};
+    elemAbc.forEach(function (elem) {
+        let abc = elem.innerText.toUpperCase();
+        audioAbc[abc] = new Audio("audio/" + abc + ".mp3");
+        elem.addEventListener('click',function (event){
+            if (playSound) {
+                let abc = event.target.innerText.toUpperCase();
+                let audio = audioAbc[abc];
+                audio.play();
+            }
+        });
+    });
+
+
+    let keyBuff = [];
+    let currentKeyTimeout;
+    let currentKanaTimeout;
+    
     document.addEventListener("keypress",function(event){
         let key = event.key;
         if (key.length == 1) {
             setCurrentKey(key);
             let kcp = key.codePointAt(0);
+            if (false
+                || ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0))
+                || ('A'.codePointAt(0) <= kcp && kcp <= 'Z'.codePointAt(0)) ) {
+                if (playSound){
+                    let abc = key.toUpperCase();
+                    let audio = audioAbc[abc];
+                    audio.play();
+                }
+            }
             if ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0)) {
                 visitKeyBuff(key);
             } else {
