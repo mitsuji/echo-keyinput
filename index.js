@@ -1,6 +1,17 @@
 
 window.addEventListener("load",function(e){
 
+    let soundBuff = [];
+    setInterval(async() => {
+        if (soundBuff.length > 0) {
+            let abc = soundBuff.shift();
+            if (playSound) {
+                let audio = audioAbc[abc];
+                await audio.play();
+            }
+        }
+    },400);
+
     let elemPlaySound = document.getElementsByName("playSound")[0];
     let playSound = elemPlaySound.checked;
     elemPlaySound.addEventListener("change",function(event){
@@ -21,11 +32,13 @@ window.addEventListener("load",function(e){
         let abc = elem.innerText.toUpperCase();
         audioAbc[abc] = new Audio("audio/" + abc + ".mp3");
         elem.addEventListener('click',function (event){
-            if (playSound) {
-                let abc = event.target.innerText.toUpperCase();
-                let audio = audioAbc[abc];
-                audio.play();
-            }
+//            if (playSound) {
+//                let abc = event.target.innerText.toUpperCase();
+//                let audio = audioAbc[abc];
+//                audio.play();
+//            }
+            let abc = event.target.innerText.toUpperCase();
+            soundBuff.push(abc);
         });
     });
 
@@ -42,11 +55,14 @@ window.addEventListener("load",function(e){
             if (false
                 || ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0))
                 || ('A'.codePointAt(0) <= kcp && kcp <= 'Z'.codePointAt(0)) ) {
-                if (playSound){
-                    let abc = key.toUpperCase();
-                    let audio = audioAbc[abc];
-                    audio.play();
-                }
+//                if (playSound){
+//                    let abc = key.toUpperCase();
+//                    let audio = audioAbc[abc];
+//                    audio.play();
+//                }
+                console.log(key);
+                let abc = key.toUpperCase();
+                soundBuff.push(abc);
             }
             if ('a'.codePointAt(0) <= kcp && kcp <= 'z'.codePointAt(0)) {
                 visitKeyBuff(key);
