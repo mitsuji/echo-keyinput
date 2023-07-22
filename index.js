@@ -24,6 +24,7 @@ window.addEventListener("load",function(e){
             if (playSound) {
                 let abc = event.target.innerText.toUpperCase();
                 let audio = audioAbc[abc];
+                audio.load();
                 audio.play();
             }
         });
@@ -45,6 +46,7 @@ window.addEventListener("load",function(e){
                 if (playSound){
                     let abc = key.toUpperCase();
                     let audio = audioAbc[abc];
+                    audio.load();
                     audio.play();
                 }
             }
